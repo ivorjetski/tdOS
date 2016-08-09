@@ -55,7 +55,8 @@ $('#abrowser').click(function () {
 });
 //refresh
 $('.browser-refresh').click(function () {
-    $('#browseri').attr('src', $('#browseri').attr('src'));
+    var tabid = '#' + $(this).closest('.tab').attr('id');
+    $(tabid + ' iframe').attr('src', $(tabid + ' iframe').attr('src'));
     return false;
 });
 //search
