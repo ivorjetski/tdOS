@@ -4,9 +4,10 @@
     <title></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="stuff/css.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="stuff/css.css" rel="stylesheet" />
     <meta name="mobile-web-app-capable" content="yes" />
     <link rel="icon" sizes="192x192" href="stuff/fav192.png" />
 </head>
@@ -75,8 +76,12 @@
 
             <div id="camera" class="ani5 app">
                 <div id="nav-bar" class="tb">
+                    <div class="w-100"></div>
+                    <a href="#" class="btn"><i class="material-icons">camera_front</i></a>
+                    <a href="#" class="btn"><i class="material-icons">videocam</i></a>
                     <a href="#" class="btn close"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
+                <input type="file" accept="image/*" capture="camera">
                 <div class="app-cover ani5">
                     <i class="fa fa-camera" aria-hidden="true"></i>
                 </div>
