@@ -35,11 +35,7 @@ $(window).load(function () {
         });
     });
 });
-
-
-
 $('.app-list a').click(function () {
-
     var icon = $(this);
     var position = icon.position();
     $('.app').css('transform-origin', Math.round(position.left + 50) + 'px ' + Math.round(position.top + 50) + 'px');
@@ -47,11 +43,28 @@ $('.app-list a').click(function () {
 
 
 //browser
+//browser
+//browser
 //open
 $('#abrowser').click(function () {
     appswap();
     $('body').addClass('browser apploaded');
     return false;
+});
+//new tab
+var bcount = 0;
+$('.browser-new').click(function () {
+    bcount++;
+    $('.tab-cover').removeClass('hide');
+    $('.browser-new').addClass('hide');
+    var $clone = $('#tab0').clone(true,true);
+    $('#browser').append($clone);
+    $clone.attr('id', 'tab' + bcount).addClass('clone');
+    $clone.find('iframe').attr('id', 'iframetab0' + bcount);
+    $clone.find('form').attr('target', 'iframetab0' + bcount);
+    $clone.css('top', 40 * bcount);
+    $clone.find('.browser-new, .tab-close').removeClass('hide');
+    $clone.find('.tab-cover, .close').addClass('hide');
 });
 //refresh
 $('.browser-refresh').click(function () {
@@ -61,22 +74,23 @@ $('.browser-refresh').click(function () {
 });
 //search
 function setBrowserFrameSource() {
-    var browserFrame = document.getElementById("browseri");
+    var iframeid = $(this).closest('.tab').attr('id');
+    var browserFrame = document.getElementById('iframe' + iframeid);
     browserFrame.src = document.getElementsByClassName("bsf-field").value;
 }
 $('.bsf-field').keypress(function (e) {
     var key = e.which;
-    if (key == 13) 
-    {
-        $('.bsf-btn').click();
+    if (key == 13) {
+        $(this).next().click();
         return false;
     }
 });
 //back
 var loads = 0;
-$('.browseri').load(function(){
-    if(loads == 0){
-    }else{
+$('iframe').load(function () {
+    if (loads == 0) {
+        $('.browser-back').addClass('hide');
+    } else {
         $('.browser-back').removeClass('hide');
     }
     ++loads;
@@ -85,28 +99,13 @@ $('.browser-back').click(function () {
     window.history.back();
     return false;
 });
-//new
-
-var bcount = 0;
-$('.browser-new').click(function () {
-    bcount++;
-    $('.tab-cover').removeClass('hide');
-    $('.browser-new').addClass('hide');
-    var $clone = $('#tab0').clone(true,true);
-    $('#browser').append($clone);
-    $clone.attr('id', 'tab' + bcount).addClass('clone');
-    $clone.find('#browseri0').attr('id', 'browseri0' + bcount)
-    $clone.css('top', 40 * bcount);
-    $clone.find('.browser-new, .tab-close').removeClass('hide');
-    $clone.find('.tab-cover, .close').addClass('hide');
-});
 
 
 
 
 
-
-
+//camera
+//camera
 //camera
 //open
 $('#acamera').click(function () {
