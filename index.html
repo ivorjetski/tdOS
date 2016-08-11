@@ -75,13 +75,28 @@
             </div>
 
             <div id="camera" class="ani5 app">
+                <div id="cam-screen" class="pos-ab">
+                    <video muted autoplay></video>
+                </div>
                 <div id="nav-bar" class="tb">
                     <div class="w-100"></div>
                     <a href="#" class="btn"><i class="material-icons">camera_front</i></a>
                     <a href="#" class="btn"><i class="material-icons">videocam</i></a>
                     <a href="#" class="btn close"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
-                <input type="file" accept="image/*" capture="camera">
+                <div id="camera-wrap">
+                    <input type="file" accept="image/*;capture=camera">
+                    <div class="select">
+                        <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+                    </div>
+                </div>
+                <div id="video-wrap">
+                    <input type="file" accept="video/*;capture=camcorder">
+                    <div class="select">
+                        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+                    </div>
+                </div>
+
                 <div class="app-cover ani5">
                     <i class="fa fa-camera" aria-hidden="true"></i>
                 </div>
