@@ -64,8 +64,6 @@ $c9:#009688;
 .app-list a:nth-of-type(8) div {
     background:$c8;
 }
-
-
 .br {
     border-radius:$border-radius;
 }
@@ -96,6 +94,16 @@ transition:all .25s ease-in-out;
 .material-icons {
     font-size:1.3em;
     vertical-align: text-top;
+}
+.pos-ab{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.pos-rel{
+    position:relative;
 }
 
 /*device*/
