@@ -76,6 +76,9 @@ $c9:#009688;
     display:inline-block;
     vertical-align:top;
 }
+#tdos svg, .ani25 {
+transition:all .25s ease-in-out;
+}
 .ani5, .form-control, .btn {
     transition:all .5s ease-in-out;
 }
@@ -234,20 +237,19 @@ $c9:#009688;
 /*tdos*/
 
 #tdos {
-    color:#fff;
-    font-size:40px;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
-    line-height:1;
-    height:40px;
-    font-weight:100;
-    letter-spacing:.1em;
-    text-shadow:0 0 10px #fff;
-    opacity:1;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    line-height: 1;
+    height: 110px;
+    font-weight: 100;
+    letter-spacing: .1em;
+    opacity: 1;
 }
 #tdos > div, .ready2 #tdos > div
 {
@@ -267,9 +269,6 @@ $c9:#009688;
 }
 #screen {
     background:linear-gradient(#3e464c, #151117);
-}
-.home #tdos {
-    transform:scale(0);
 }
 #tdos svg
 {
