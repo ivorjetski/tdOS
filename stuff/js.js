@@ -55,16 +55,17 @@ $('#abrowser').click(function () {
 var bcount = 0;
 $('.browser-new').click(function () {
     bcount++;
-    $('.tab-cover').removeClass('hide');
-    $('.browser-new').addClass('hide');
+    //$('.tab-cover').removeClass('hide');
+    //$('.browser-new').addClass('hide');
+    $('.tab').removeClass('current-tab');
     var $clone = $('#tab0').clone(true,true);
     $('#browser').append($clone);
-    $clone.attr('id', 'tab' + bcount).addClass('clone');
+    $clone.attr('id', 'tab' + bcount).addClass('clone current-tab');
     $clone.find('iframe').attr('id', 'iframetab0' + bcount);
     $clone.find('form').attr('target', 'iframetab0' + bcount);
     $clone.css('top', 40 * bcount);
-    $clone.find('.browser-new, .tab-close').removeClass('hide');
-    $clone.find('.tab-cover, .close').addClass('hide');
+    //$clone.find('.browser-new, .tab-close').removeClass('hide');
+    //$clone.find('.tab-cover, .close').addClass('hide');
 });
 //refresh
 $('.browser-refresh').click(function () {
@@ -103,7 +104,8 @@ $('.browser-back').click(function () {
 });
 $('.tab-cover').click(function () {
     $('.tab').removeClass('current-tab after-c-tab');
-    $(this).closest('.tab').addClass('current-tab').nextAll().addClass('after-c-tab').find('.tab-cover').addClass('hide');
+    //$(this).closest('.tab').addClass('current-tab').nextAll().addClass('after-c-tab').find('.tab-cover').addClass('hide');
+    $(this).closest('.tab').addClass('current-tab').nextAll().addClass('after-c-tab');
 });
 
 
