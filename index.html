@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html class="h-100">
 <head>
-    <title></title>
+    <title>tdOS</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -44,7 +44,7 @@
             </div>
 
             <div id="browser" class="ani5 app">
-                <div id="tab0" class="tab">
+                <div id="tab0" class="tab ani5">
                     <div class="browser-nav-bar tb">
                         <a href="#" class="btn hide browser-back"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                         <div class="form-group">
@@ -78,7 +78,7 @@
                 <div id="cam-screen" class="pos-ab">
                     <video muted autoplay></video>
                 </div>
-                <div id="nav-bar" class="tb">
+                <div class="tb nav-bar">
                     <div class="w-100"></div>
                     <a href="#" class="btn"><i class="material-icons">camera_front</i></a>
                     <a href="#" class="btn"><i class="material-icons">videocam</i></a>
@@ -86,12 +86,16 @@
                 </div>
                 <div id="camera-wrap">
                     <input type="file" accept="image/*;capture=camera">
+                    <br/>
+                    <br />
                     <div class="select">
                         <label for="audioSource">Audio source: </label><select id="audioSource"></select>
                     </div>
                 </div>
                 <div id="video-wrap">
                     <input type="file" accept="video/*;capture=camcorder">
+                    <br />
+                    <br />
                     <div class="select">
                         <label for="videoSource">Video source: </label><select id="videoSource"></select>
                     </div>
