@@ -86,33 +86,34 @@ $('.bsf-field').keypress(function (e) {
     }
 });
 //back
-var loads = 0;
-$('iframe').load(function () {
-    if (loads == 0) {
-        $('.browser-back').addClass('hide');
-    } else {
-        $('.browser-back').removeClass('hide');
-    }
-    ++loads;
+$('.tab').each(function () {
+    var loads = 0;
+    $(this).find('iframe').load(function () {
+        if (loads == 0) {
+            $(this).find('.browser-back').addClass('hide');
+        } else {
+            $(this).find('.browser-back').removeClass('hide');
+        }
+        ++loads;
+    });
 });
 $('.browser-back').click(function () {
     window.history.back();
     return false;
 });
-
-
-
-
-
-//camera
-//camera
-//camera
-//open
-$('#acamera').click(function () {
-    appswap();
-    $('body').addClass('camera apploaded');
-    return false;
+$('.tab-cover').click(function () {
+    $('.tab').removeClass('current-tab after-c-tab');
+    $(this).closest('.tab').addClass('current-tab').nextAll().addClass('after-c-tab').find('.tab-cover').addClass('hide');
 });
+
+
+
+
+
+//camera
+//camera
+//camera
+
 //select camera
 'use strict';
 
@@ -158,7 +159,7 @@ function errorCallback(error) {
     console.log('navigator.getUserMedia error: ', error);
 }
 
-function start() {
+function camopen() {
     if (window.stream) {
         videoElement.src = null;
         window.stream.stop();
@@ -180,7 +181,19 @@ function start() {
     navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 
-audioSelect.onchange = start;
-videoSelect.onchange = start;
+audioSelect.onchange = camopen;
+videoSelect.onchange = camopen;
 
-start();
+//open
+$('#acamera').click(function () {
+    appswap();
+    $('body').addClass('camera apploaded');
+    camopen();
+    return false;
+});
+
+$('#camera .close').click(function () {
+    window.stream.stop();
+    alert('hello');
+});
+
