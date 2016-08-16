@@ -55,17 +55,15 @@ $('#abrowser').click(function () {
 var bcount = 0;
 $('.browser-new').click(function () {
     bcount++;
-    //$('.tab-cover').removeClass('hide');
-    //$('.browser-new').addClass('hide');
-    $('.tab').removeClass('current-tab');
+    $('.tab').removeClass('current-tab after-c-tab');
     var $clone = $('#tab0').clone(true,true);
     $('#browser').append($clone);
     $clone.attr('id', 'tab' + bcount).addClass('clone current-tab');
     $clone.find('iframe').attr('id', 'iframetab0' + bcount);
     $clone.find('form').attr('target', 'iframetab0' + bcount);
     $clone.css('top', 40 * bcount);
-    //$clone.find('.browser-new, .tab-close').removeClass('hide');
-    //$clone.find('.tab-cover, .close').addClass('hide');
+    $('body').attr('style', 'height:calc(100% + ' + 40 * bcount + 'px);');
+    $('after-c-tab').attr('style', 'height:calc(100% + ' - 40 * bcount + 'px);');
 });
 //refresh
 $('.browser-refresh').click(function () {
@@ -104,12 +102,22 @@ $('.browser-back').click(function () {
 });
 $('.tab-cover').click(function () {
     $('.tab').removeClass('current-tab after-c-tab');
-    //$(this).closest('.tab').addClass('current-tab').nextAll().addClass('after-c-tab').find('.tab-cover').addClass('hide');
     $(this).closest('.tab').addClass('current-tab').nextAll().addClass('after-c-tab');
 });
+//browser scroll
 
-
-
+//function scrolly() {
+//    if ($(window).scrollTop() > 0) {
+//        $('body').removeClass('show-navbar').addClass('hide-navbar');
+//        //$('iframe').attr('scrolling', 'no');
+//    }
+//    else {
+//        $('body').removeClass('hide-navbar').addClass('show-navbar');
+//        //$('iframe').attr('scrolling', 'yes');
+//    }
+//};
+//$(document).scroll(scrolly);
+//$(document).ready(scrolly);
 
 
 //camera
